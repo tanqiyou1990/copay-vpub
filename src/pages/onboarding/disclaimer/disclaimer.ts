@@ -46,12 +46,12 @@ export class DisclaimerPage {
   }
 
   openDisclaimer() {
-    let url = 'https://particl.io/policy/copay/privacy.html';
+    let url = 'https://www.vpubchain.info';
     let optIn = true;
     let title = null;
-    let message = this.translate.instant('View Wallet Terms of Use');
-    let okText = this.translate.instant('Open');
-    let cancelText = this.translate.instant('Go Back');
+    let message = this.translate.instant('查看GOVPUB使用协议');
+    let okText = this.translate.instant('打开');
+    let cancelText = this.translate.instant('返回');
     this.externalLinkProvider.open(
       url,
       optIn,

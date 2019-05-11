@@ -1,14 +1,15 @@
 <ion-content no-bounce>
   <div class="logo-tagline">
     <img src='assets/img/app/logo-negative.svg' />
-    <p padding [ngClass]="{'primary-color': !isCopay, 'comment-color': isCopay}" translate>Take control of your money, get started with particl.</p>
+    <p padding [ngClass]="{'primary-color': !isCopay, 'comment-color': isCopay}">
+      使用GOVPUB的时候，请保管好您的手机，不要随意借给他人!</p>
   </div>
   <div class="bottom-absolute">
     <button ion-button class="button-standard e2e-get-started" (click)="getStarted()">
-      {{'Get started' | translate}}
+      开始使用
     </button>
     <button ion-button clear class="button-standard primary-color" (click)="restoreFromBackup()">
-      {{'Restore from backup' | translate}}
+      从备份中还原钱包
     </button>
   </div>
 </ion-content>

@@ -31,7 +31,8 @@
     <info-sheet-template *ngSwitchCase="'backup-needed-with-activity'" type="info">
       <span sheet-title-text translate>Needs Backup</span>
       <span sheet-text translate>
-        Congratulations! It looks like you've recently received money. It's highly advised that you verify your recovery phrase so that your funds can be recovered in case your phone was lost or stolen.
+        Congratulations! It looks like you've recently received money. It's highly advised that you verify your recovery
+        phrase so that your funds can be recovered in case your phone was lost or stolen.
       </span>
       <span sheet-button-text translate>Continue</span>
       <span sheet-second-button-text translate>Not right now</span>
@@ -46,7 +47,8 @@
     </info-sheet-template>
 
     <info-sheet-template *ngSwitchCase="'miner-fee'" type="danger">
-      <span sheet-title-text>{{ '{coinName} miner fees unusually high' | translate: {coinName: params.coinName } }}</span>
+      <span
+        sheet-title-text>{{ '{coinName} miner fees unusually high' | translate: {coinName: params.coinName } }}</span>
       <span sheet-text>
         {{ '{coinName} miner fees are high due to record demand for limited space on the {coinName} network. Particl does not receive and does not control {coinName} miner fees.' | translate: {coinName: params.coinName } }}
       </span>
@@ -69,27 +71,28 @@
     </info-sheet-template>
 
     <info-sheet-template *ngSwitchCase="'backup-warning'" type="warning">
-      <span sheet-title-text translate>Screenshots are not secure</span>
+      <span sheet-title-text translate>我们建议不要屏幕截图</span>
       <span sheet-text translate>
-        If you take a screenshot, your recovery phrase may be viewed by other apps. You can make a safe backup with physical paper and a pen.
+        如果您要通过屏幕截图来保管助记词, 请务必不要将截图分享给他人.
       </span>
-      <span sheet-button-text translate>I understand</span>
-      <span sheet-second-button-text translate>Go Back</span>
+      <span sheet-button-text translate>明白</span>
+      <span sheet-second-button-text translate>返回</span>
     </info-sheet-template>
 
     <info-sheet-template *ngSwitchCase="'backup-ready'" type="success">
-      <span sheet-title-text>{{'Your {walletType} wallet is backed up!' | translate : {walletType: params.walletType}
+      <span sheet-title-text>您的账户已经成功备份
         }}</span>
       <span sheet-text translate>
-        Be sure to store your recovery phrase in a secure place. If this app is deleted, your money cannot be recovered without it.
+        请再次确保您已经妥善保管好助记词, 一旦该APP被删除, 助记词是您恢复账户的唯一途径.
       </span>
-      <span sheet-button-text translate>GOT IT</span>
+      <span sheet-button-text translate>明白</span>
     </info-sheet-template>
 
     <info-sheet-template *ngSwitchCase="'sensitive-info'" type="warning">
       <span sheet-title-text translate>Sensitive Data</span>
       <span sheet-text translate>
-        The information you are about to share/export may contain sensitive data such us wallet IDs, addresses, balances, etc. Please be sure you trust the person or entity with whom you are sharing this information.
+        The information you are about to share/export may contain sensitive data such us wallet IDs, addresses,
+        balances, etc. Please be sure you trust the person or entity with whom you are sharing this information.
       </span>
       <span sheet-button-text translate>I understand</span>
       <span sheet-second-button-text translate>Go Back</span>
@@ -111,7 +114,8 @@
 
     <info-sheet-template *ngSwitchCase="'archive-all-gift-cards'" type="warning">
       <span sheet-title-text>{{'Archive All {brand} Gift Cards?' | translate: params }}</span>
-      <span sheet-text>{{'Have you redeemed all of your {brand} Gift Cards? Archived gift cards will still be accessible in settings.' | translate: params }}</span>
+      <span
+        sheet-text>{{'Have you redeemed all of your {brand} Gift Cards? Archived gift cards will still be accessible in settings.' | translate: params }}</span>
       <span sheet-button-text translate>YES</span>
     </info-sheet-template>
 
@@ -150,9 +154,12 @@
     </info-sheet-template>
 
     <info-sheet-template *ngSwitchCase="'legacy-address-info'" type="info">
-      <span sheet-title-text>{{'{appName} BCH wallets use the CashAddr format by default' | translate: {appName:params.appName} }}</span>
+      <span
+        sheet-title-text>{{'{appName} BCH wallets use the CashAddr format by default' | translate: {appName:params.appName} }}</span>
       <span sheet-text translate>
-        If you need to send to "old" addresses (like the one you just pasted), and you are SURE those are BCH addresses, you can "translate" them using the BCH Translator tool and paste the corresponding address in CashAddr format for that "old" address.
+        If you need to send to "old" addresses (like the one you just pasted), and you are SURE those are BCH addresses,
+        you can "translate" them using the BCH Translator tool and paste the corresponding address in CashAddr format
+        for that "old" address.
       </span>
       <span sheet-button-text translate>Translate address</span>
       <span sheet-second-button-text translate>GOT IT</span>
@@ -161,15 +168,16 @@
     <info-sheet-template *ngSwitchCase="'appreciate-review'" type="love">
       <span sheet-title-text translate>We appreciate your review</span>
       <span sheet-text translate>
-        5-star ratings help us get the Particl Wallet into more hands, and more users means more resources can be committed to the app!
+        5-star ratings help us get the Particl Wallet into more hands, and more users means more resources can be
+        committed to the app!
       </span>
       <span sheet-button-text>{{'Rate on the {storeName}' | translate: {storeName: params?.storeName} }}</span>
     </info-sheet-template>
 
     <info-sheet-template *ngSwitchCase="'backup-failed'" type="warning">
-      <span sheet-title-text translate>Uh oh...</span>
+      <span sheet-title-text translate>重要...</span>
       <span sheet-text translate>
-        It's important that you write your recovery phrase down correctly. If something happens to your wallet, you'll need it to recover your money. Please review and try again.
+        请确保能按照正确的顺序写下助记词, 如果设备或者账户出现什么意外, 你需要助记词来恢复您的账户. 所以请再次输入正确的助记词.
       </span>
       <span sheet-button-text translate>GOT IT</span>
     </info-sheet-template>
@@ -198,14 +206,16 @@
 
     <info-sheet-template *ngSwitchCase="'request-feature'" type="info">
       <span sheet-title-text translate>Request a new feature</span>
-      <span sheet-text translate>If you need immediate help with a problem you are having, then get help by contacting our support team.</span>
+      <span sheet-text translate>If you need immediate help with a problem you are having, then get help by contacting
+        our support team.</span>
       <span sheet-button-text translate>Get help</span>
       <span sheet-second-button-text translate>Request feature</span>
     </info-sheet-template>
 
     <info-sheet-template *ngSwitchCase="'report-issue'" type="info">
       <span sheet-title-text translate>Report an issue</span>
-      <span sheet-text translate>Found something broken? Please report it as a bug. If you need immediate help with a problem you are having, then get help by contacting our support team.</span>
+      <span sheet-text translate>Found something broken? Please report it as a bug. If you need immediate help with a
+        problem you are having, then get help by contacting our support team.</span>
       <span sheet-button-text translate>Get help</span>
       <span sheet-second-button-text translate>Report issue</span>
     </info-sheet-template>

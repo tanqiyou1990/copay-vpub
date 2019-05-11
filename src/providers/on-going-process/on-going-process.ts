@@ -31,8 +31,8 @@ export class OnGoingProcessProvider {
         'Connecting to ShapeShift...'
       ),
       creatingTx: this.translate.instant('Creating transaction...'),
-      creatingWallet: this.translate.instant('Creating Wallet...'),
-      deletingWallet: this.translate.instant('Deleting Wallet...'),
+      creatingWallet: this.translate.instant('正在创建...'),
+      deletingWallet: this.translate.instant('正在删除...'),
       extractingWalletInfo: this.translate.instant(
         'Extracting Wallet information...'
       ),

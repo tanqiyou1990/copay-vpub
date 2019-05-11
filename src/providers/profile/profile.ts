@@ -204,7 +204,7 @@ export class ProfileProvider {
           return;
         }
         wallet.setNotificationsInterval(this.UPDATE_PERIOD);
-        wallet.openWallet(() => {});
+        wallet.openWallet(() => { });
       }
     );
     this.events.subscribe('wallet:updated', (walletId: string) => {
@@ -380,11 +380,11 @@ export class ProfileProvider {
 
     this.logger.debug(
       'ValidatingWallet: ' +
-        walletId +
-        ' skip Device:' +
-        skipDeviceValidation +
-        ' coin:' +
-        wallet.credentials.coin
+      walletId +
+      ' skip Device:' +
+      skipDeviceValidation +
+      ' coin:' +
+      wallet.credentials.coin
     );
     setTimeout(() => {
       wallet.validateKeyDerivation(
@@ -402,7 +402,7 @@ export class ProfileProvider {
             this.profile.setChecked(this.platformProvider.ua, walletId);
           } else {
             this.logger.warn('Key Derivation failed for wallet:' + walletId);
-            this.persistenceProvider.clearLastAddress(walletId).then(() => {});
+            this.persistenceProvider.clearLastAddress(walletId).then(() => { });
           }
 
           this.storeProfileIfDirty();
@@ -494,12 +494,12 @@ export class ProfileProvider {
 
   private showWarningNoEncrypt(): Promise<any> {
     return new Promise(resolve => {
-      const title = this.translate.instant('Are you sure?');
+      const title = this.translate.instant('请再次确认?');
       const msg = this.translate.instant(
-        'Without encryption, a thief or another application on this device may be able to access your funds.'
+        '如果不设置密码, 任何控制你设备的人均可转移你的资产.'
       );
-      const okText = this.translate.instant("I'm sure");
-      const cancelText = this.translate.instant('Go Back');
+      const okText = this.translate.instant("确定");
+      const cancelText = this.translate.instant('返回');
       this.popupProvider
         .ionicConfirm(title, msg, okText, cancelText)
         .then(res => {
@@ -513,13 +513,13 @@ export class ProfileProvider {
       if (!wallet.canSign()) return resolve();
 
       const title = this.translate.instant(
-        'Would you like to protect this wallet with a password?'
+        '我们建议您为账户设置一个密码!'
       );
       const message = this.translate.instant(
-        'Encryption can protect your funds if this device is stolen or compromised by malicious software.'
+        '设置秘密可大大降低设备丢失之后资产被盗用的风险!'
       );
-      const okText = this.translate.instant('Yes');
-      const cancelText = this.translate.instant('No');
+      const okText = this.translate.instant('现在设置');
+      const cancelText = this.translate.instant('不需要');
       this.popupProvider
         .ionicConfirm(title, message, okText, cancelText)
         .then(res => {
@@ -535,16 +535,16 @@ export class ProfileProvider {
             return resolve();
           });
         });
-    });
+    })
   }
 
   private encrypt(wallet): Promise<any> {
     return new Promise(resolve => {
       let title = this.translate.instant(
-        'Enter a password to encrypt your wallet'
+        '为账户设置一个密码'
       );
       const warnMsg = this.translate.instant(
-        'This password is only for this device, and it cannot be recovered. To avoid losing funds, write your password down.'
+        '这个密码仅仅只在当前设备下有效, 并且该秘密是无法被恢复的. 为防止秘密丢失, 建议您妥善保管好密码.'
       );
       this.askPassword(warnMsg, title).then((password: string) => {
         if (!password) {
@@ -556,7 +556,7 @@ export class ProfileProvider {
           });
         } else {
           title = this.translate.instant(
-            'Enter your encrypt password again to confirm'
+            '请再次输入您的秘密'
           );
           this.askPassword(warnMsg, title).then((password2: string) => {
             if (!password2 || password != password2) {
@@ -938,9 +938,9 @@ export class ProfileProvider {
 
       this.logger.debug(
         'Binding wallet:' +
-          credentials.walletId +
-          ' Validating?:' +
-          !skipKeyValidation
+        credentials.walletId +
+        ' Validating?:' +
+        !skipKeyValidation
       );
       return resolve(this.bindWalletClient(walletClient));
     });
@@ -1080,7 +1080,7 @@ export class ProfileProvider {
       setTimeout(() => {
         this.seedWallet(opts)
           .then(walletClient => {
-            const name = opts.name || this.translate.instant('Personal Wallet');
+            const name = opts.name || this.translate.instant('个人账户');
             const myName = opts.myName || this.translate.instant('me');
 
             walletClient.createWallet(

@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-buttons right>
       <button ion-button class="primary-color" (click)="createDefaultWallet()" *ngIf="currentIndex == 0">
-        {{'Skip' | translate}}
+        跳过
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -11,19 +11,19 @@
 <ion-content no-bounce>
   <ion-slides pager="true" (ionSlideDidChange)="slideChanged()">
     <ion-slide>
-      <h3 class="title" translate>Particl is secure, digital money.</h3>
-      <p translate class="top-description">You can spend particl at millions of websites and stores worldwide.</p>
+      <h3 class="title" translate>VPUB是一种安全的流通资产</h3>
+      <p translate class="top-description">你可以在全球各个地方以及支持VPUB的网上商店花费你的VPUB.</p>
       <img src='assets/img/app/onboarding/tour-phone.svg' />
       <div class="bottom-absolute">
-        <p translate class="bottom-description">Just scan the code to pay.</p>
+        <p translate class="bottom-description">扫一扫，即可完成交易.</p>
         <button ion-button clear class="button-standard btn-transparent primary-color e2e-got-it" (click)="slideNext()">
-          {{'Got it' | translate}}
+          我知道了
         </button>
       </div>
     </ion-slide>
 
-    <ion-slide>
-      <h3 class="title" translate>Particl is a currency.</h3>
+    <!-- <ion-slide>
+      <h3 class="title" translate>VPUB是一种流通货币.</h3>
       <p translate class="top-description">You can trade it for other currencies like US Dollars, Euros, or Pounds.</p>
       <div class="ticker-container">
         <div class="ticker">1 PART = {{localCurrencySymbol}}{{localCurrencyPerPart}}</div>
@@ -31,20 +31,21 @@
       <img class="ticker-img" src='assets/img/app/onboarding/tour-currency.svg' />
       <div class="bottom-absolute">
         <p translate class="bottom-description">The exchange rate changes with the market.</p>
-        <button ion-button clear class="button-standard btn-transparent primary-color e2e-makes-sense" (click)="slideNext()">
+        <button ion-button clear class="button-standard btn-transparent primary-color e2e-makes-sense"
+          (click)="slideNext()">
           {{'Makes sense' | translate}}
         </button>
       </div>
-    </ion-slide>
+    </ion-slide> -->
 
     <ion-slide>
-      <h3 class="title" translate>You control your particl.</h3>
-      <p translate class="top-description">This app stores your particl with cutting-edge security.</p>
+      <h3 class="title" translate>你的资产由您自己掌控.</h3>
+      <p translate class="top-description">我们采用最安全的技术来保证你资产的安全性.</p>
       <img src='assets/img/app/onboarding/tour-control.svg' />
       <div class="bottom-absolute">
-        <p translate class="bottom-description">Not even Particl can access it.</p>
+        <p translate class="bottom-description">包括你使用的GOVPUB应用都无法转移您的资产.</p>
         <button ion-button class="button-standard e2e-create-wallet" (click)="createDefaultWallet()">
-          {{'Create particl wallet' | translate}}
+          创建我的账户
         </button>
       </div>
     </ion-slide>

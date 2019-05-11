@@ -1,15 +1,16 @@
 <ion-content no-bounce>
   <img src="assets/img/app/onboarding/warning.svg" class="alert-icon" />
-  <h3 class="title" translate>No backup, no funds.</h3>
-  <p class="top-description" translate>Since only you control your money, you’ll need to save your recovery phrase in case this app is deleted.</p>
+  <h3 class="title" translate>账户备份对您至关重要</h3>
+  <p class="top-description" translate>为保证GOVPUB应用被删除后能再次恢复您的账户.请务必要进行备份!</p>
   <div class="bottom-absolute">
     <ion-icon name="ios-arrow-round-down-outline" class="arrow-down"></ion-icon>
-    <p class="bottom-description" translate>Your wallet is never saved to cloud storage or standard device backups.</p>
+    <p class="bottom-description" translate>该设备上没有找到有效备份数据.</p>
     <button class="primary" ion-button class="button-standard" (click)="initBackupFlow()">
-      {{'Backup wallet' | translate}}
+      现在备份
     </button>
-    <button class="secondary" ion-button clear class="button-standard btn-transparent primary-color" (click)="doBackupLater()">
-      {{'Do it later' | translate}}
+    <button class="secondary" ion-button clear class="button-standard btn-transparent primary-color"
+      (click)="doBackupLater()">
+      稍后再备份
     </button>
   </div>
 </ion-content>

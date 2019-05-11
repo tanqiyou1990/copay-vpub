@@ -101,8 +101,8 @@ export class TourPage {
           );
           if (this.retryCount > 3) {
             this.onGoingProcessProvider.clear();
-            let title = this.translate.instant('Cannot create wallet');
-            let okText = this.translate.instant('Retry');
+            let title = this.translate.instant('无法创建账户');
+            let okText = this.translate.instant('重试');
             this.popupProvider.ionicAlert(title, err, okText).then(() => {
               this.retryCount = 0;
               this.createDefaultWallet();

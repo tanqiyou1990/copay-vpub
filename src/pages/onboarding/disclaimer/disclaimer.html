@@ -2,30 +2,30 @@
   <ion-navbar hideBackButton="true"></ion-navbar>
 </ion-header>
 <ion-content no-bounce>
-  <h3 *ngIf="resume" class="title" translate>Quick review!</h3>
-  <h3 *ngIf="!resume" class="title" translate>Almost done! Let's review.</h3>
-  <p class="top-description" translate>Particl is different - it cannot be safely held with a bank or web service.</p>
+  <h3 *ngIf="resume" class="title" translate>再次检查!</h3>
+  <h3 *ngIf="!resume" class="title" translate>即将完成! 再次检查.</h3>
+  <p class="top-description" translate>GOVPUB - 一个维公链综合应用平台.</p>
   <ion-list class="checkbox-list" no-lines>
     <ion-item>
       <ion-label>
-        {{'I understand that my funds are held securely on this device, not by a company' | translate}}.
+        我确定我所使用的设备是安全的, 并且该设备属于我个人所有.
       </ion-label>
       <ion-checkbox [(ngModel)]="accepted.first"></ion-checkbox>
     </ion-item>
     <ion-item>
       <ion-label>
-        {{'I understand that if this app is moved to another device or deleted, my funds can only be recovered with the recovery phrase' | translate}}.
+        我明白当我的GOVPUB应用被删除或者重新安装后, 助记词是我恢复账户的唯一途径.
       </ion-label>
       <ion-checkbox [(ngModel)]="accepted.second"></ion-checkbox>
     </ion-item>
     <div *ngIf="hasEmail">
       <ion-item>
         <ion-label>
-          <span translate>I give explicit consent to Particl to use my email address to send me email notifications about payments (and, if selected, email updates and news about the wallet).</span>
+          <span translate>我希望GOVPUB将账户通知信息发送到我的电子邮箱地址 (同时, 我们还会将APP的更新以及GOVPUB的有趣新闻发送给你).</span>
         </ion-label>
         <ion-checkbox [(ngModel)]="accepted.third"></ion-checkbox>
       </ion-item>
-      <a class="externalLink" (click)="openPrivacyPolicy()" translate>View Privacy Policy</a>
+      <!-- <a class="externalLink" (click)="openPrivacyPolicy()" translate>View Privacy Policy</a> -->
     </div>
   </ion-list>
 </ion-content>
@@ -35,14 +35,15 @@
       <div *ngIf="accepted.first && accepted.second && accepted.third">
         <ion-item no-lines>
           <ion-label>
-            {{'I have read, understood, and agree to the Terms of Use' | translate}}.
+            我已阅读并同意该产品的使用协议
           </ion-label>
           <ion-checkbox [(ngModel)]="terms.accepted"></ion-checkbox>
         </ion-item>
-        <a class="externalLink" (click)="openDisclaimer()" translate>Terms of Use</a>
+        <a class="externalLink" (click)="openDisclaimer()" translate>GOVPUB使用协议</a>
       </div>
-      <button ion-button class="button-standard" [disabled]="!accepted.first || !accepted.second || !accepted.third || !terms.accepted" (click)="confirm()">
-        <span translate>Confirm &amp; Finish</span>
+      <button ion-button class="button-standard"
+        [disabled]="!accepted.first || !accepted.second || !accepted.third || !terms.accepted" (click)="confirm()">
+        <span translate>确定</span>
       </button>
     </div>
   </ion-toolbar>
