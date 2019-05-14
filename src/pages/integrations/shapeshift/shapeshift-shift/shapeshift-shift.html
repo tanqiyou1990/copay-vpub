@@ -13,8 +13,8 @@
         <img item-end *ngIf="fromWallet.coin == 'bch'" src="assets/img/bitcoin-cash-logo.svg" width="22">
       </ion-item>
       <button ion-item class="wallet-selector" (click)="showWallets('from')">
-        <img *ngIf="fromWallet.network != 'testnet'" src="assets/img/icon-wallet.svg" [ngStyle]="{'background-color': fromWallet.color}"
-          class="icon-wallet" />
+        <img *ngIf="fromWallet.network != 'testnet'" src="assets/img/icon-wallet.svg"
+          [ngStyle]="{'background-color': fromWallet.color}" class="icon-wallet" />
         <div class="wallet-balance">
           <span>
             {{fromWallet.name || fromWallet.id}}
@@ -35,7 +35,9 @@
               <span *ngIf="fromWallet.n > 1">
                 {{fromWallet.m}}-of-{{fromWallet.n}}
               </span>
-              <ion-icon *ngIf="!fromWallet.balanceHidden && (fromWallet.status.totalBalanceSat != fromWallet.status.spendableAmount)" name="ios-timer-outline"></ion-icon>
+              <ion-icon
+                *ngIf="!fromWallet.balanceHidden && (fromWallet.status.totalBalanceSat != fromWallet.status.spendableAmount)"
+                name="ios-timer-outline"></ion-icon>
               <span class="wallet-warning" *ngIf="fromWallet.error">{{fromWallet.error}}</span>
             </span>
             &nbsp;
@@ -50,8 +52,8 @@
         <img item-end *ngIf="toWallet.coin == 'bch'" src="assets/img/bitcoin-cash-logo.svg" width="22">
       </ion-item>
       <button ion-item class="wallet-selector" (click)="showWallets('to')">
-        <img *ngIf="toWallet.network != 'testnet'" src="assets/img/icon-wallet.svg" class="icon-wallet" [ngStyle]="{'background-color': toWallet.color}"
-        />
+        <img *ngIf="toWallet.network != 'testnet'" src="assets/img/icon-wallet.svg" class="icon-wallet"
+          [ngStyle]="{'background-color': toWallet.color}" />
         <div class="wallet-balance">
           <span>
             {{toWallet.name || toWallet.id}}
@@ -61,7 +63,7 @@
               Incomplete
             </span>
             <span class="wallet-warning" *ngIf="toWallet.isComplete() && toWallet.needsBackup" translate>
-              Needs Backup
+              需要备份
             </span>
             <span *ngIf="toWallet.isComplete() && !toWallet.needsBackup">
               <span *ngIf="!toWallet.balanceHidden && !toWallet.scanning"> {{toWallet.status.totalBalanceStr ? toWallet.status.totalBalanceStr : ( toWallet.cachedBalance ? toWallet.cachedBalance
@@ -75,7 +77,9 @@
               <span class="tab-home__wallet__multisig-number" *ngIf="toWallet.n > 1">
                 {{toWallet.m}}-of-{{toWallet.n}}
               </span>
-              <ion-icon *ngIf="!toWallet.balanceHidden && (toWallet.status.totalBalanceSat != toWallet.status.spendableAmount)" name="ios-timer-outline"></ion-icon>
+              <ion-icon
+                *ngIf="!toWallet.balanceHidden && (toWallet.status.totalBalanceSat != toWallet.status.spendableAmount)"
+                name="ios-timer-outline"></ion-icon>
               <span class="wallet-warning" *ngIf="toWallet.error">{{toWallet.error}}</span>
             </span>
             &nbsp;
@@ -133,7 +137,8 @@
     </ion-item>
     <div class="terms">
       <p>
-        <span translate>I agree to the Terms and certify that I am the beneficial owner of the input assets and the destination address.</span>
+        <span translate>I agree to the Terms and certify that I am the beneficial owner of the input assets and the
+          destination address.</span>
         <a (click)="openTerms()" translate>Click to open Terms</a>.
       </p>
     </div>
@@ -143,8 +148,8 @@
 
 <ion-footer>
   <ion-toolbar *ngIf="fromWallets.length > 0 && toWallets.length > 0">
-    <button ion-button full class="button-footer" no-low-fee type="button" [disabled]="!fromWallet || !toWallet || !termsAccepted"
-      (click)="setAmount()">
+    <button ion-button full class="button-footer" no-low-fee type="button"
+      [disabled]="!fromWallet || !toWallet || !termsAccepted" (click)="setAmount()">
       {{'Continue' | translate}}
     </button>
   </ion-toolbar>

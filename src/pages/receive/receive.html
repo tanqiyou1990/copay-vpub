@@ -7,7 +7,8 @@
     </ion-buttons>
     <ion-title>{{wallet && wallet.name || ('Receive'|translate)}}</ion-title>
     <ion-buttons right>
-      <button *ngIf="wallet && wallet.isComplete() && !wallet.needsBackup" (click)="showMoreOptions()" ion-button icon-only>
+      <button *ngIf="wallet && wallet.isComplete() && !wallet.needsBackup" (click)="showMoreOptions()" ion-button
+        icon-only>
         <ion-icon class="horizontal-lg" name="more"></ion-icon>
       </button>
     </ion-buttons>
@@ -15,7 +16,8 @@
   <ion-toolbar [navbar-bg]="wallet.color">
     <div *ngIf="!wallet.balanceHidden && !wallet.scanning && wallet.status" class="wallet-details-header__balance">
       <span>{{wallet.status && wallet.status.totalBalanceStr}}</span>
-      <ion-icon *ngIf="wallet.status.totalBalanceSat != wallet.status.spendableAmount" ios="ios-timer-outline" md="md-timer"></ion-icon>
+      <ion-icon *ngIf="wallet.status.totalBalanceSat != wallet.status.spendableAmount" ios="ios-timer-outline"
+        md="md-timer"></ion-icon>
     </div>
     <div *ngIf="wallet.balanceHidden  && !wallet.scanning" class="wallet-details-header__balance-hidden">
       <span class="title" translate>[Balance Hidden]</span>
@@ -31,20 +33,23 @@
           <img src="assets/img/single-folded-content.svg" />
         </div>
         <div class="title-info">
-          <span translate>Needs Backup</span>
+          <span translate>需要备份</span>
         </div>
         <div class="subtitle-info">
-          <span translate>Before retrieving your wallet address, it's recommended that you first write down your recovery phrase and store it securely so that your wallet can be recovered in the case your device was lost or stolen.</span>
+          <span translate>
+            在您开始接收VPUB之前, 我们希望您一定要确保已经完全记录好账户恢复助记词并且已经妥善保管, 助记词是您恢复账户的唯一途径.
+          </span>
         </div>
         <button ion-button class="button-standard" (click)="goToBackup()">
-          {{'Write Down Recovery Phrase' | translate}}
+          现在记录助记词
         </button>
       </div>
     </div>
 
     <div class="qr-container" *ngIf="wallet && wallet.isComplete() && !wallet.needsBackup">
       <div class="card qr-card" [ngClass]="{'qr-code-bounce': playAnimation}" *ngIf="wallets[0] && address">
-        <ngx-qrcode (click)="showFullAddr()" *ngIf="address" copy-to-clipboard="{{ address }}" hide-toast="true" qrc-value="{{address}}" qrc-class="aclass" qrc-errorCorrectionLevel="M"></ngx-qrcode>
+        <ngx-qrcode (click)="showFullAddr()" *ngIf="address" copy-to-clipboard="{{ address }}" hide-toast="true"
+          qrc-value="{{address}}" qrc-class="aclass" qrc-errorCorrectionLevel="M"></ngx-qrcode>
       </div>
     </div>
 
@@ -59,7 +64,8 @@
 
           <button class="new-address-btn" detail-none text-center (click)="setAddress(true)">
             <span class="new-address" ion-text color="primary" translate>
-              <img [hidden]="loading" class="spin-icon" [ngClass]="{'spin-backwards': playAnimation}" src="assets/img/right.svg" width="16" />
+              <img [hidden]="loading" class="spin-icon" [ngClass]="{'spin-backwards': playAnimation}"
+                src="assets/img/right.svg" width="16" />
               <div *ngIf="loading" [ngClass]="{'spin-fast': loading}" class="spinner"></div>
             </span>
           </button>

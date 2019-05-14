@@ -75,8 +75,8 @@ export class CreateWalletPage implements OnInit {
     this.cancelText = this.translate.instant('Cancel');
     this.isShared = this.navParams.get('isShared');
     this.title = this.isShared
-      ? this.translate.instant('Create shared wallet')
-      : this.translate.instant('Create personal wallet');
+      ? this.translate.instant('创建共享账户')
+      : this.translate.instant('创建个人账户');
     this.defaults = this.configProvider.getDefaults();
     this.tc = this.isShared ? this.defaults.wallet.totalCopayers : 1;
 

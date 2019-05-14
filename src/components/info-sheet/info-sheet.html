@@ -29,13 +29,12 @@
     </info-sheet-template>
 
     <info-sheet-template *ngSwitchCase="'backup-needed-with-activity'" type="info">
-      <span sheet-title-text translate>Needs Backup</span>
+      <span sheet-title-text translate>需要备份</span>
       <span sheet-text translate>
-        Congratulations! It looks like you've recently received money. It's highly advised that you verify your recovery
-        phrase so that your funds can be recovered in case your phone was lost or stolen.
+        祝贺您!您看起来已经轻车熟路了, 但是对账户的备份是非常必要的. 当您的设备丢失或者APP被删除后, 只有通过备份的助记词才能恢复您的账户.
       </span>
-      <span sheet-button-text translate>Continue</span>
-      <span sheet-second-button-text translate>Not right now</span>
+      <span sheet-button-text translate>现在备份</span>
+      <span sheet-second-button-text translate>以后再说</span>
     </info-sheet-template>
 
     <info-sheet-template *ngSwitchCase="'miner-fee-notice'" type="warning">

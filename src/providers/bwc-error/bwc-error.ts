@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class BwcErrorProvider {
-  constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService) { }
 
   public msg(err, prefix?: string): string {
     if (!err) return 'Unknown error';
@@ -147,7 +147,7 @@ export class BwcErrorProvider {
           body = this.translate.instant('Wallet is not complete');
           break;
         case 'WALLET_NEEDS_BACKUP':
-          body = this.translate.instant('Wallet needs backup');
+          body = this.translate.instant('账户需要备份');
           break;
         case 'MISSING_PARAMETER':
           body = this.translate.instant('Missing parameter');

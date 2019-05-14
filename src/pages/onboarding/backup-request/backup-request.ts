@@ -40,22 +40,22 @@ export class BackupRequestPage {
   }
 
   public doBackupLater(): void {
-    let title = this.translate.instant('Watch Out!');
+    let title = this.translate.instant('请注意!');
     let message = this.translate.instant(
-      'If this device is replaced or this app is deleted, neither you nor Particl can recover your funds without a backup.'
+      '如果该设备丢失或者您的GOVPUB应用被删除, 在您未备份的情况下我们将无法恢复您的资产.'
     );
-    let okText = this.translate.instant('I understand');
-    let cancelText = this.translate.instant('Go Back');
+    let okText = this.translate.instant('我确定不需要备份');
+    let cancelText = this.translate.instant('返回');
     this.popupProvider
       .ionicConfirm(title, message, okText, cancelText)
       .then(res => {
         if (!res) return;
-        let title = this.translate.instant('Are you sure you want to skip it?');
+        let title = this.translate.instant('你确定要跳过此步骤?');
         let message = this.translate.instant(
-          'You can back up your wallet later from your wallet settings.'
+          '你可以稍后在账户管理页面进行备份.'
         );
-        let okText = this.translate.instant('Yes, skip');
-        let cancelText = this.translate.instant('Go Back');
+        let okText = this.translate.instant('是,请跳过');
+        let cancelText = this.translate.instant('返回');
         this.popupProvider
           .ionicConfirm(title, message, okText, cancelText)
           .then(res => {

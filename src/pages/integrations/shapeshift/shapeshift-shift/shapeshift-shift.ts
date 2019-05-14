@@ -153,9 +153,9 @@ export class ShapeshiftShiftPage {
     }
 
     if (this.toWallet.needsBackup) {
-      let title = this.translate.instant('Needs backup');
+      let title = this.translate.instant('需要备份');
       let msg = this.translate.instant(
-        'The destination wallet is not backed up. Please, complete the backup process before continue.'
+        '转出的目标账户尚未备份. 请完成备份之后再进行操作.'
       );
       this.popupProvider.ionicAlert(title, msg);
       return;

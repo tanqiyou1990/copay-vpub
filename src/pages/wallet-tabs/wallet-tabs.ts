@@ -20,23 +20,23 @@ import * as _ from 'lodash';
     <ion-tabs selectedIndex="1" #tabs>
       <ion-tab
         [root]="receiveRoot"
-        tabTitle="{{'Receive'|translate}}"
+        tabTitle="接收"
         tabIcon="tab-receive"
       ></ion-tab>
       <ion-tab
         [root]="activityRoot"
-        tabTitle="{{'Activity'|translate}}"
+        tabTitle="记录"
         tabIcon="tab-activity"
       ></ion-tab>
       <ion-tab
         [root]="sendRoot"
-        tabTitle="{{'Send'|translate}}"
+        tabTitle="发送"
         tabIcon="tab-send"
       ></ion-tab>
       <ion-tab
         *ngIf="canColdStake"
         [root]="stakingRoot"
-        tabTitle="{{'Staking'|translate}}"
+        tabTitle="冷节点"
         tabIcon="snow"
       ></ion-tab>
     </ion-tabs>
@@ -147,6 +147,7 @@ export class WalletTabsPage {
       this.canColdStake =
         wallet.coin === 'part' &&
         wallet.m === 1 &&
+        wallet.status && wallet.status.lockedBalanceSat &&
         wallet.n === 1 &&
         !isSingleAddress;
     } else {
